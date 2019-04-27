@@ -7,6 +7,7 @@ public class VillagerCharacter : PlayerCharacter
     protected override void Awake()
     {
         base.Awake();
+
         animator = GetComponent<Animator>();
         animator.SetBool("IsRunning", false);
     }
