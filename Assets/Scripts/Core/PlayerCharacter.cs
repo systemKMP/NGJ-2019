@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
+using Debug = UnityEngine.Debug;
 
 public abstract class PlayerCharacter : MonoBehaviour
 {
@@ -20,6 +20,9 @@ public abstract class PlayerCharacter : MonoBehaviour
 
     public float MaxSpeed = 2.0f;
     public float RotationSpeed = 100.0f;
+
+    public Team Team;
+    public int NumberInTeam;
 
     private bool isDead = false;
 
@@ -42,7 +45,8 @@ public abstract class PlayerCharacter : MonoBehaviour
                 gameObject.transform.rotation =
                   Quaternion.RotateTowards(gameObject.transform.rotation, Quaternion.LookRotation(targetFaceDirection, Vector3.up), Time.deltaTime * RotationSpeed);
             }
-        } else
+        }
+        else
         {
             body.velocity = Vector3.zero;
         }
@@ -95,4 +99,19 @@ public abstract class PlayerCharacter : MonoBehaviour
 
     public abstract void TryStartAction(int actionIndex);
     public abstract void TryReleaseAction(int actionIndex);
+
+    public void SetupIndicator()
+    {
+        var indicatorContainer = transform.GetChild(0);
+
+        Debug.Log(indicatorContainer);
+
+        Debug.Log("Set indicator for team member " + NumberInTeam + " for team " + Team);
+
+        Assert.IsNotNull(indicatorContainer, "indicatorContainer != null");
+
+        var indicator = indicatorContainer.GetChild(Team == Team.TeamA ? 0 : 1).GetChild(NumberInTeam);
+
+        indicator.gameObject.SetActive(true);
+    }
 }

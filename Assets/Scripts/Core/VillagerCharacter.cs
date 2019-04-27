@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using JetBrains.Annotations;
+using UnityEngine;
 
+[UsedImplicitly]
 public class VillagerCharacter : PlayerCharacter
 {
     private Animator animator;
