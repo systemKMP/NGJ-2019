@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -3911090340631498849}
   m_Layer: 8
   m_Name: VillagerA
-  m_TagString: Villager
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainLauncher: {fileID: -3911090340631498849}
-  MaxHealth: 100
+  MaxHealth: 10
   CurrentHealth: 0
   targetMoveDirection: {x: 0, y: 0, z: 0}
   targetFaceDirection: {x: 0, y: 0, z: 0}
@@ -142,6 +142,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   launchInterval: 2
-  timePassed: 0
+  timeRemaining: 0
   ProjectilePrefab: {fileID: 6286297110390405829, guid: c72b6a77a0142964a9fca62e7134c441,
     type: 3}

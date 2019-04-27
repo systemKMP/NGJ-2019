@@ -11,9 +11,12 @@ public class VillagerCharacter : PlayerCharacter
 
     public override void TryStartAction(int actionIndex)
     {
-        if (actionIndex == 0)
+        if (handleInput)
         {
-            MainLauncher.TryLaunch(transform.position, transform.rotation);
+            if (actionIndex == 0)
+            {
+                MainLauncher.TryLaunch(transform.position, transform.rotation);
+            }
         }
     }
 }
