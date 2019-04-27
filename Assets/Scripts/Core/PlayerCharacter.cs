@@ -23,21 +23,28 @@ public abstract class PlayerCharacter : MonoBehaviour
 
     private bool isDead = false;
 
-    private void Awake()
+    private Rigidbody body;
+
+    protected virtual void Awake()
     {
         CurrentHealth = MaxHealth;
+        body = gameObject.GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
         if (handleInput)
         {
-            gameObject.transform.position += targetMoveDirection * MaxSpeed * Time.deltaTime;
+            body.velocity = targetMoveDirection * MaxSpeed;
+            //gameObject.transform.position += targetMoveDirection * MaxSpeed * Time.deltaTime;
             if (targetFaceDirection.magnitude > 0.1f)
             {
                 gameObject.transform.rotation =
                   Quaternion.RotateTowards(gameObject.transform.rotation, Quaternion.LookRotation(targetFaceDirection, Vector3.up), Time.deltaTime * RotationSpeed);
             }
+        } else
+        {
+            body.velocity = Vector3.zero;
         }
     }
 
@@ -60,6 +67,7 @@ public abstract class PlayerCharacter : MonoBehaviour
         OnCharacterDeath?.Invoke(respawn);
         Destroy(gameObject, 2.0f);
         handleInput = false;
+        body.isKinematic = true;
     }
 
     public virtual void TryMove(Vector2 direction)
