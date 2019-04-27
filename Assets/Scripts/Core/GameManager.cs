@@ -18,10 +18,7 @@ public class GameManager : MonoBehaviour
         get { return _instance; }
     }
 
-    public void BossDeath()
-    {
-        Debug.Log("Boss dead");
-    }
+
 
     private void Awake()
     {
@@ -39,15 +36,25 @@ public class GameManager : MonoBehaviour
     public BossCharacter BossPrefab;
 
     private PlayerController Boss = null;
+    private Team BossTeam = Team.TeamA;
 
     public List<Transform> VillagerSpawnPositonsTeamA;
     public List<Transform> VillagerSpawnPositonsTeamB;
+    public Transform BossSpawnPosition;
+
 
     public void SetUpPlayer(PlayerController playerController)
     {
-        if (VillagersTeamA.Count < VillagersTeamB.Count)
+        if (VillagersTeamA.Count <= VillagersTeamB.Count)
         {
-            playerController.AssignCharacter(VillagerPrefabs[Random.Range(0, VillagerPrefabs.Count)], VillagerSpawnPositonsTeamA[TeamASpawnIndex], Team.TeamA);
+            if (Boss == null && BossTeam == Team.TeamA)
+            {
+                playerController.AssignCharacter(BossPrefab, VillagerSpawnPositonsTeamA[TeamASpawnIndex], Team.TeamA);
+            }
+            else
+            {
+                playerController.AssignCharacter(VillagerPrefabs[Random.Range(0, VillagerPrefabs.Count)], VillagerSpawnPositonsTeamA[TeamASpawnIndex], Team.TeamA);
+            }
             TeamASpawnIndex++;
             if (TeamASpawnIndex >= VillagerSpawnPositonsTeamA.Count)
             {
@@ -57,7 +64,14 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            playerController.AssignCharacter(VillagerPrefabs[Random.Range(0, VillagerPrefabs.Count)], VillagerSpawnPositonsTeamB[TeamBSpawnIndex], Team.TeamB);
+            if (Boss == null && BossTeam == Team.TeamB)
+            {
+                playerController.AssignCharacter(BossPrefab, VillagerSpawnPositonsTeamA[TeamASpawnIndex], Team.TeamA);
+            }
+            else
+            {
+                playerController.AssignCharacter(VillagerPrefabs[Random.Range(0, VillagerPrefabs.Count)], VillagerSpawnPositonsTeamB[TeamBSpawnIndex], Team.TeamB);
+            }
             TeamBSpawnIndex++;
             if (TeamBSpawnIndex >= VillagerSpawnPositonsTeamB.Count)
             {
@@ -89,8 +103,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Update()
+    public void BossDeath(Transform bossTrans)
     {
+        BossTeam = BossTeam == Team.TeamA ? Team.TeamB : Team.TeamA;
 
+        if (BossTeam == Team.TeamA)
+        {
+            var player = VillagersTeamA[Random.Range(0, VillagersTeamA.Count)];
+            player.Kill(false);
+            player.AssignCharacter(BossPrefab, bossTrans, Team.TeamA);
+        }
+        else
+        {
+            var player = VillagersTeamB[Random.Range(0, VillagersTeamB.Count)];
+            player.Kill(false);
+            player.AssignCharacter(BossPrefab, bossTrans, Team.TeamB);
+        }
     }
 }

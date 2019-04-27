@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 4768396647788699645}
   - component: {fileID: -7248548196835250683}
   - component: {fileID: 1608220467270776705}
-  m_Layer: 10
+  - component: {fileID: 3800579519745528660}
+  m_Layer: 0
   m_Name: BossA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c74e0efbc76f3184f965327261eb9d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainLauncher: {fileID: 0}
+  MainLauncher: {fileID: 3800579519745528660}
   MaxHealth: 100
   CurrentHealth: 0
   targetMoveDirection: {x: 0, y: 0, z: 0}
@@ -128,3 +129,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &3800579519745528660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4768396647788699644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c62d3992b1752b64aa66ae61feb83c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  launchInterval: 0.5
+  timeRemaining: 0
+  ProjectilePrefab: {fileID: 6286297110390405829, guid: c72b6a77a0142964a9fca62e7134c441,
+    type: 3}

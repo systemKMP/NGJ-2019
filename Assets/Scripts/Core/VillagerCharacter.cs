@@ -11,10 +11,9 @@ public class VillagerCharacter : PlayerCharacter
         animator.SetBool("IsRunning", false);
     }
 
-    protected override void Kill()
+    public override void Kill(bool respawn)
     {
-        base.Kill();
-
+        base.Kill(respawn);
         animator.SetBool("IsDead", true);
     }
 

@@ -53,9 +53,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void HandleDeath()
+    private void HandleDeath(bool respawn)
     {
         Character.OnCharacterDeath -= HandleDeath;
-        GameManager.Instance.GetNewCharacter(gameObject.GetComponent<PlayerController>(), playerTeam);
+        if (respawn)
+        {
+            GameManager.Instance.GetNewCharacter(gameObject.GetComponent<PlayerController>(), playerTeam);
+        }
+    }
+
+    public void Kill(bool respawn = true)
+    {
+        Character.Kill(respawn);
     }
 }
