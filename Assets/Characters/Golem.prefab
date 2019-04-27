@@ -761,6 +761,7 @@ MonoBehaviour:
   RotationSpeed: 100
   Team: 0
   NumberInTeam: 0
+  BossStepClip: {fileID: 8300000, guid: 3064224ce4e7e20458d35462a2dec1c6, type: 3}
 --- !u!114 &-8829480490037195071
 MonoBehaviour:
   m_ObjectHideFlags: 0
