@@ -4,10 +4,10 @@ public class VillagerCharacter : PlayerCharacter
 {
     private Animator animator;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         animator = GetComponent<Animator>();
-
         animator.SetBool("IsRunning", false);
     }
 
