@@ -4,8 +4,6 @@ public class BossCharacter : PlayerCharacter
 {
     private Animator animator;
 
-    public ProjectileLauncher SecondaryLauncher;
-
     protected override void Awake()
     {
         base.Awake();
@@ -40,17 +38,9 @@ public class BossCharacter : PlayerCharacter
     {
         if (actionIndex == 0)
         {
-            if (MainLauncher.TryLaunch(transform.position, transform.rotation))
-            {
-                animator.SetTrigger("Punch");
-            }
-        }
-        if (actionIndex == 1)
-        {
-            if (SecondaryLauncher.TryLaunch(transform.position, transform.rotation))
-            {
-                animator.SetTrigger("Punch");
-            }
+            MainLauncher.TryLaunch(transform.position, transform.rotation);
+
+            animator.SetTrigger("Punch");
         }
     }
 }

@@ -696,7 +696,7 @@ GameObject:
   - component: {fileID: 1308554486672798509}
   - component: {fileID: -8829480490037195071}
   - component: {fileID: 276769341716986550}
-  - component: {fileID: 3388344147887420238}
+  - component: {fileID: 3362029076764047355}
   m_Layer: 0
   m_Name: Golem
   m_TagString: Untagged
@@ -761,7 +761,6 @@ MonoBehaviour:
   RotationSpeed: 100
   Team: 0
   NumberInTeam: 0
-  SecondaryLauncher: {fileID: 0}
 --- !u!114 &-8829480490037195071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,11 +773,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62d3992b1752b64aa66ae61feb83c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchInterval: 4
+  launchInterval: 2
   timeRemaining: 0
-  instantiationDistance: 3.5
-  launchDelay: 1.05
-  ProjectilePrefab: {fileID: 3238180635768688944, guid: f47bd4002ce50194f8dbbebf3b2842c7,
+  ProjectilePrefab: {fileID: 6286297110390405829, guid: c72b6a77a0142964a9fca62e7134c441,
     type: 3}
 --- !u!54 &276769341716986550
 Rigidbody:
@@ -796,8 +793,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!136 &3388344147887420238
-CapsuleCollider:
+--- !u!65 &3362029076764047355
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -806,10 +803,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 5.9
-  m_Height: 31.9
-  m_Direction: 1
-  m_Center: {x: 0, y: 10.51, z: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 24, z: 3}
+  m_Center: {x: 0, y: 12, z: 0}
 --- !u!1 &8261092098168314391
 GameObject:
   m_ObjectHideFlags: 0

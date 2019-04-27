@@ -39,7 +39,7 @@ public abstract class PlayerCharacter : MonoBehaviour
         if (handleInput)
         {
             body.velocity = targetMoveDirection * MaxSpeed;
-            body.angularVelocity = Vector3.zero;
+            //gameObject.transform.position += targetMoveDirection * MaxSpeed * Time.deltaTime;
             if (targetFaceDirection.magnitude > 0.1f)
             {
                 gameObject.transform.rotation =
@@ -103,6 +103,10 @@ public abstract class PlayerCharacter : MonoBehaviour
     public void SetupIndicator()
     {
         var indicatorContainer = transform.GetChild(0);
+
+        Debug.Log(indicatorContainer);
+
+        Debug.Log("Set indicator for team member " + NumberInTeam + " for team " + Team);
 
         Assert.IsNotNull(indicatorContainer, "indicatorContainer != null");
 

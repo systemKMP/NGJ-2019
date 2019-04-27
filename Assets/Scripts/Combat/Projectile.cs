@@ -8,14 +8,11 @@ public class Projectile : MonoBehaviour
     public int Damage;
 
     public float Lifetime;
-    public float HitValidityTime;
     private float timePassed;
 
     public float Velocity;
 
     private bool isActive = true;
-
-    public GameObject HitEffect;
 
     public Team FromTeam;
 
@@ -32,7 +29,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if (!isActive || HitValidityTime < timePassed)
+        if (!isActive)
         {
             return;
         }
@@ -40,10 +37,6 @@ public class Projectile : MonoBehaviour
         string tag = col.tag;
         if ((FromTeam == Team.TeamA && col.gameObject.layer == 9) || (FromTeam == Team.TeamB && col.gameObject.layer == 8))
         {
-            if (HitEffect)
-            {
-                Instantiate(HitEffect, transform.position, transform.rotation);
-            }
             Destroy(gameObject, 1.0f);
             isActive = false;
             col.gameObject.GetComponent<PlayerCharacter>().Hit(Damage);
