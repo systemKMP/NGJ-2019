@@ -696,7 +696,7 @@ GameObject:
   - component: {fileID: 1308554486672798509}
   - component: {fileID: -8829480490037195071}
   - component: {fileID: 276769341716986550}
-  - component: {fileID: 3362029076764047355}
+  - component: {fileID: 3388344147887420238}
   m_Layer: 0
   m_Name: Golem
   m_TagString: Untagged
@@ -761,6 +761,7 @@ MonoBehaviour:
   RotationSpeed: 100
   Team: 0
   NumberInTeam: 0
+  SecondaryLauncher: {fileID: 0}
 --- !u!114 &-8829480490037195071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -795,8 +796,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!65 &3362029076764047355
-BoxCollider:
+--- !u!136 &3388344147887420238
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -805,9 +806,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10, y: 24, z: 3}
-  m_Center: {x: 0, y: 12, z: 0}
+  m_Radius: 5.9
+  m_Height: 31.9
+  m_Direction: 1
+  m_Center: {x: 0, y: 10.51, z: 0}
 --- !u!1 &8261092098168314391
 GameObject:
   m_ObjectHideFlags: 0

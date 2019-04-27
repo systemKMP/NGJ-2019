@@ -57,8 +57,6 @@ public class PlayerController : MonoBehaviour
 
         var numberInTeam = Array.FindIndex(availableMembers[playerTeam], x => x == false);
 
-        Debug.Log("Assigning player index " + numberInTeam + " for team " + team);
-
         Character.Team = playerTeam;
         Character.NumberInTeam = numberInTeam;
         Character.SetupIndicator();

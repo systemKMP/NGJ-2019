@@ -104,10 +104,6 @@ public abstract class PlayerCharacter : MonoBehaviour
     {
         var indicatorContainer = transform.GetChild(0);
 
-        Debug.Log(indicatorContainer);
-
-        Debug.Log("Set indicator for team member " + NumberInTeam + " for team " + Team);
-
         Assert.IsNotNull(indicatorContainer, "indicatorContainer != null");
 
         var indicator = indicatorContainer.GetChild(Team == Team.TeamA ? 0 : 1).GetChild(NumberInTeam);
