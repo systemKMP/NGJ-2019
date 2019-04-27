@@ -13,6 +13,12 @@ public enum Team
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
+
+    public void DeclareVictory(Team team)
+    {
+
+    }
+
     public static GameManager Instance
     {
         get { return _instance; }
@@ -50,6 +56,7 @@ public class GameManager : MonoBehaviour
             if (Boss == null && BossTeam == Team.TeamA)
             {
                 playerController.AssignCharacter(BossPrefab, VillagerSpawnPositonsTeamA[TeamASpawnIndex], Team.TeamA);
+                Boss = playerController;
             }
             else
             {
@@ -67,6 +74,7 @@ public class GameManager : MonoBehaviour
             if (Boss == null && BossTeam == Team.TeamB)
             {
                 playerController.AssignCharacter(BossPrefab, VillagerSpawnPositonsTeamA[TeamASpawnIndex], Team.TeamA);
+                Boss = playerController;
             }
             else
             {
