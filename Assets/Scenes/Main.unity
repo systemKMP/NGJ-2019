@@ -120,6 +120,49 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &154767332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 154767333}
+  - component: {fileID: 154767334}
+  m_Layer: 0
+  m_Name: TeamASpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &154767333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154767332}
+  m_LocalRotation: {x: -0, y: -0.8048072, z: -0, w: 0.5935364}
+  m_LocalPosition: {x: 22.32, y: 2.4676447, z: 11.849999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1508194733}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: -107.18301, z: 0}
+--- !u!114 &154767334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154767332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291148a118ec0034cb41e9e57bd89b75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &228967850
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +174,7 @@ GameObject:
   - component: {fileID: 228967851}
   - component: {fileID: 228967852}
   m_Layer: 0
-  m_Name: VillagerSpawnPoint
+  m_Name: TeamASpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -145,11 +188,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 228967850}
   m_LocalRotation: {x: -0, y: -0.6215848, z: -0, w: 0.78334695}
-  m_LocalPosition: {x: 18.039251, y: 2.4676447, z: -5.9753327}
+  m_LocalPosition: {x: 23.31, y: 2.4676447, z: -7.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1508194733}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -76.864006, z: 0}
 --- !u!114 &228967852
 MonoBehaviour:
@@ -257,16 +300,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd56a8ea85f0ca848a49df5fcf75b342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Villagers:
+  VillagerPrefabs:
   - {fileID: 4495309313020091619, guid: 6b38eedd4e536e348ae9eb68dd99b486, type: 3}
   - {fileID: 1789410843049361084, guid: 7d67667b106ba8748819ca2d50914ffc, type: 3}
-  Bosses:
-  - {fileID: -7248548196835250683, guid: 0d8580a7061b7c2408567ea2e97a9b09, type: 3}
-  BossSpawnPosition: {fileID: 1038294116}
-  VillagerSpawnPositons:
+  VillagersTeamA: []
+  VillagersTeamB: []
+  BossPrefab: {fileID: 0}
+  VillagerSpawnPositonsTeamA:
   - {fileID: 750443457}
   - {fileID: 1122913228}
   - {fileID: 228967851}
+  - {fileID: 154767333}
+  VillagerSpawnPositonsTeamB:
+  - {fileID: 1255104985}
+  - {fileID: 1907103884}
+  - {fileID: 1904746250}
+  - {fileID: 676448624}
+--- !u!1 &676448623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 676448624}
+  - component: {fileID: 676448625}
+  m_Layer: 0
+  m_Name: TeamBSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &676448624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676448623}
+  m_LocalRotation: {x: -0, y: -0.6136308, z: -0, w: -0.7895932}
+  m_LocalPosition: {x: -20.710205, y: 2.4676447, z: -7.7458262}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1508194733}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: -284.29498, z: 0}
+--- !u!114 &676448625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676448623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291148a118ec0034cb41e9e57bd89b75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &750443456
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +370,7 @@ GameObject:
   - component: {fileID: 750443457}
   - component: {fileID: 750443458}
   m_Layer: 0
-  m_Name: VillagerSpawnPoint
+  m_Name: TeamASpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -292,11 +384,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750443456}
   m_LocalRotation: {x: -0, y: -0.75721055, z: -0, w: 0.6531708}
-  m_LocalPosition: {x: 15.299252, y: 2.4676447, z: 10.434668}
+  m_LocalPosition: {x: 23.07, y: 2.4676447, z: 5.8199997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1508194733}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -98.438, z: 0}
 --- !u!114 &750443458
 MonoBehaviour:
@@ -305,49 +397,6 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750443456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 291148a118ec0034cb41e9e57bd89b75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1038294115
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1038294116}
-  - component: {fileID: 1038294117}
-  m_Layer: 0
-  m_Name: BossSpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1038294116
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038294115}
-  m_LocalRotation: {x: -0, y: 0.691047, z: -0, w: 0.7228099}
-  m_LocalPosition: {x: -18.430748, y: 3.9676447, z: 3.2146668}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1508194733}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 87.426, z: 0}
---- !u!114 &1038294117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038294115}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 291148a118ec0034cb41e9e57bd89b75, type: 3}
@@ -455,7 +504,7 @@ GameObject:
   - component: {fileID: 1122913228}
   - component: {fileID: 1122913229}
   m_Layer: 0
-  m_Name: VillagerSpawnPoint
+  m_Name: TeamASpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -469,11 +518,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122913227}
   m_LocalRotation: {x: -0, y: -0.68587625, z: -0, w: 0.72771823}
-  m_LocalPosition: {x: 19.039251, y: 2.4676447, z: 3.384667}
+  m_LocalPosition: {x: 23.35, y: 2.4676447, z: -0.83000064}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1508194733}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -86.609, z: 0}
 --- !u!114 &1122913229
 MonoBehaviour:
@@ -482,6 +531,49 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122913227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291148a118ec0034cb41e9e57bd89b75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1255104984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1255104985}
+  - component: {fileID: 1255104986}
+  m_Layer: 0
+  m_Name: TeamBSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1255104985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255104984}
+  m_LocalRotation: {x: -0, y: -0.67204684, z: -0, w: -0.7405087}
+  m_LocalPosition: {x: -21.155426, y: 2.4676447, z: -1.6856635}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1508194733}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: -275.55, z: 0}
+--- !u!114 &1255104986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255104984}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 291148a118ec0034cb41e9e57bd89b75, type: 3}
@@ -563,13 +655,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484389864}
-  m_LocalRotation: {x: 0.43726486, y: 0, z: 0, w: 0.8993328}
-  m_LocalPosition: {x: -0.4, y: 62.3, z: -49.7}
+  m_LocalRotation: {x: 0.3057571, y: -0, z: -0, w: 0.95210963}
+  m_LocalPosition: {x: -0.4, y: 55, z: -75.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 51.859, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 35.607002, y: 0, z: 0}
 --- !u!1 &1508194732
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,10 +689,14 @@ Transform:
   m_LocalPosition: {x: -0.88925135, y: -1.9676446, z: -2.384667}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1038294116}
   - {fileID: 750443457}
   - {fileID: 1122913228}
   - {fileID: 228967851}
+  - {fileID: 154767333}
+  - {fileID: 1255104985}
+  - {fileID: 1907103884}
+  - {fileID: 1904746250}
+  - {fileID: 676448624}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -695,3 +791,89 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1904746249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1904746250}
+  - component: {fileID: 1904746251}
+  m_Layer: 0
+  m_Name: TeamBSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1904746250
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904746249}
+  m_LocalRotation: {x: -0, y: -0.79876363, z: -0, w: -0.60164505}
+  m_LocalPosition: {x: -20.734562, y: 2.4676447, z: 11.419816}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1508194733}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: -253.976, z: 0}
+--- !u!114 &1904746251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904746249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291148a118ec0034cb41e9e57bd89b75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1907103883
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1907103884}
+  - component: {fileID: 1907103885}
+  m_Layer: 0
+  m_Name: TeamBSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1907103884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907103883}
+  m_LocalRotation: {x: -0, y: -0.74477273, z: -0, w: -0.6673182}
+  m_LocalPosition: {x: -21.1, y: 2.4676447, z: 4.97}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1508194733}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: -263.721, z: 0}
+--- !u!114 &1907103885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907103883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291148a118ec0034cb41e9e57bd89b75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
