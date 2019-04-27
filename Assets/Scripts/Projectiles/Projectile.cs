@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private float projectileSpeed;
+    
+    private Rigidbody rigidbody;
+    
+
     void Start()
     {
-        
+        rigidbody = GetComponent<Rigidbody>();
+        // Fire(projectileSpeed, Quaternion.identity);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void Fire(float force, Quaternion direction){
+        transform.rotation = direction;
+        rigidbody.AddForce(force * transform.forward,ForceMode.Impulse);
+    }
+    
+    void OnCollisionEnter(Collision coll){
+        Stick(coll.transform);
+    }
+    
+    void Stick(Transform newParent){
+        rigidbody.isKinematic = true;
+        transform.parent = newParent;
     }
 }
