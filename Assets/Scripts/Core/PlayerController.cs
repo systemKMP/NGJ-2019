@@ -1,14 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.Experimental.Input;
 using UnityEngine.Experimental.Input.Plugins.PlayerInput;
-using UnityEngine.Experimental.Input.Plugins.Users;
 
 public class PlayerController : MonoBehaviour
 {
     public PlayerCharacter Character;
+
+    private readonly IDictionary<Team, bool[]> availableMembers = new Dictionary<Team, bool[]>
+    {
+        { Team.TeamA, new bool[4] },
+        { Team.TeamB, new bool[4] },
+    };
+
     private Team playerTeam;
 
+    [UsedImplicitly]
     private void Start()
     {
         GameManager.Instance.SetUpPlayer(gameObject.GetComponent<PlayerController>());
@@ -44,17 +52,23 @@ public class PlayerController : MonoBehaviour
         playerTeam = team;
         Character = Instantiate(characterPrefab, spawnTrans.position, spawnTrans.rotation);
         Character.OnCharacterDeath += HandleDeath;
-        if (playerTeam == Team.TeamA)
-        {
-            Character.gameObject.layer = 8;
-        } else
-        {
-            Character.gameObject.layer = 9;
-        }
+
+        Character.gameObject.layer = playerTeam == Team.TeamA ? 8 : 9;
+
+        var numberInTeam = Array.FindIndex(availableMembers[playerTeam], x => x == false);
+
+        Debug.Log("Assigning player index " + numberInTeam + " for team " + team);
+
+        Character.Team = playerTeam;
+        Character.NumberInTeam = numberInTeam;
+        Character.SetupIndicator();
+
+        availableMembers[playerTeam][numberInTeam] = true;
     }
 
     private void HandleDeath(bool respawn)
     {
+        availableMembers[Character.Team][Character.NumberInTeam] = false;
         Character.OnCharacterDeath -= HandleDeath;
         if (respawn)
         {
