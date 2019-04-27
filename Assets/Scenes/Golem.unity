@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -393,22 +393,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8064095776531819414, guid: 41ad0faff83b33d4fbad7811620429f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Golem
+      objectReference: {fileID: 0}
+    - target: {fileID: 1308554486672798509, guid: 41ad0faff83b33d4fbad7811620429f4,
+        type: 3}
+      propertyPath: MainLauncher
+      value: 
+      objectReference: {fileID: 1581460449280003943}
     - target: {fileID: -8829480490037195071, guid: 41ad0faff83b33d4fbad7811620429f4,
         type: 3}
       propertyPath: ProjectilePrefab
       value: 
       objectReference: {fileID: 6286297110390405829, guid: c72b6a77a0142964a9fca62e7134c441,
         type: 3}
-    - target: {fileID: 1308554486672798509, guid: 41ad0faff83b33d4fbad7811620429f4,
-        type: 3}
-      propertyPath: MainLauncher
-      value: 
-      objectReference: {fileID: 1581460449280003943}
-    - target: {fileID: 8064095776531819414, guid: 41ad0faff83b33d4fbad7811620429f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Golem
-      objectReference: {fileID: 0}
     - target: {fileID: 6463287491657914757, guid: 41ad0faff83b33d4fbad7811620429f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -469,6 +469,36 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b158e2cc6e2a6684095427b95383b423, type: 2}
+    - target: {fileID: 4626745040855305096, guid: 41ad0faff83b33d4fbad7811620429f4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4626745040855305096, guid: 41ad0faff83b33d4fbad7811620429f4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4626745040855305096, guid: 41ad0faff83b33d4fbad7811620429f4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4626745040855305096, guid: 41ad0faff83b33d4fbad7811620429f4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4626745040855305096, guid: 41ad0faff83b33d4fbad7811620429f4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4626745040855305096, guid: 41ad0faff83b33d4fbad7811620429f4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41ad0faff83b33d4fbad7811620429f4, type: 3}
 --- !u!114 &1581460449280003943 stripped
