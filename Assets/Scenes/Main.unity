@@ -301,8 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VillagerPrefabs:
-  - {fileID: 4495309313020091619, guid: 6b38eedd4e536e348ae9eb68dd99b486, type: 3}
-  - {fileID: 1789410843049361084, guid: 7d67667b106ba8748819ca2d50914ffc, type: 3}
+  - {fileID: 415764991693781303, guid: ea227a3f260d9994bb66c8efe5943483, type: 3}
   VillagersTeamA: []
   VillagersTeamB: []
   BossPrefab: {fileID: 0}

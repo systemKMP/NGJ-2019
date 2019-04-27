@@ -81,7 +81,7 @@ public class InputMaster : IInputActionCollection
                     ""id"": ""1b1a57ec-f3fd-46de-9b2f-72f1d1123c9c"",
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""StickDeadzone(min=0.1)"",
                     ""groups"": "";Xbox-1;Xbox-2"",
                     ""action"": ""Movement"",
                     ""isComposite"": false,

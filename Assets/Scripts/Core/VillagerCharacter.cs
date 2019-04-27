@@ -1,10 +1,29 @@
-﻿using JetBrains.Annotations;
-using UnityEngine;
+﻿using UnityEngine;
 
-[UsedImplicitly]
 public class VillagerCharacter : PlayerCharacter
 {
     private Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+
+        animator.SetBool("IsRunning", false);
+    }
+
+    protected override void Kill()
+    {
+        base.Kill();
+
+        animator.SetBool("IsDead", true);
+    }
+
+    public override void TryMove(Vector2 movement)
+    {
+        base.TryMove(movement);
+
+        animator.SetBool("IsRunning", movement != Vector2.zero);
+    }
 
     public override void TryReleaseAction(int actionIndex)
     {
@@ -17,18 +36,4 @@ public class VillagerCharacter : PlayerCharacter
             MainLauncher.TryLaunch(transform.position, transform.rotation);
         }
     }
-
-    public override void TryMove(Vector2 direction)
-    {
-        base.TryMove(direction);
-
-        animator.SetBool("IsRunning", direction != Vector2.zero);
-    }
-
-    public void Die() => animator.SetBool("IsDead", true);
-
-    public void Respawn() => animator.SetBool("IsDead", false);
-
-    [UsedImplicitly]
-    private void Awake() => animator = GetComponent<Animator>();
 }
