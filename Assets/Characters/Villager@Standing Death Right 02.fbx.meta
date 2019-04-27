@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7b1a82e2a95ff25428c3e3ab04983465
+guid: 30b7cc4bf6582044491a6a8957ce1714
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
+      name: Standing Death Right 02
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 59
+      lastFrame: 70
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
