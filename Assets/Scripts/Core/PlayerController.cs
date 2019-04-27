@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         Character.TryStartAction(2);
     }
 
-    public void AssignCharacter(PlayerCharacter characterPrefab, Transform spawnTrans)
+    public void AssignCharacter(PlayerCharacter characterPrefab, Transform spawnTrans, Team team)
     {
         Character = Instantiate(characterPrefab, spawnTrans.position, spawnTrans.rotation);
     }
