@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class PlayerCharacter : MonoBehaviour
 {
-    public delegate void CharacterDeath();
+    public delegate void CharacterDeath(bool respawn);
     public event CharacterDeath OnCharacterDeath;
 
     protected bool handleInput = true;
@@ -20,6 +20,8 @@ public abstract class PlayerCharacter : MonoBehaviour
 
     public float MaxSpeed = 2.0f;
     public float RotationSpeed = 100.0f;
+
+    private bool isDead = false;
 
     private void Awake()
     {
@@ -41,16 +43,21 @@ public abstract class PlayerCharacter : MonoBehaviour
 
     internal void Hit(int damage)
     {
+        if (isDead)
+        {
+            return;
+        }
         CurrentHealth -= damage;
         if (CurrentHealth <= 0)
         {
-            Kill();
+            Kill(true);
         }
     }
 
-    protected virtual void Kill()
+    public virtual void Kill(bool respawn)
     {
-        OnCharacterDeath?.Invoke();
+        isDead = true;
+        OnCharacterDeath?.Invoke(respawn);
         Destroy(gameObject, 2.0f);
         handleInput = false;
     }
