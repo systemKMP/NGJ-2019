@@ -5,6 +5,11 @@ using UnityEngine;
 
 public abstract class PlayerCharacter : MonoBehaviour
 {
+    public delegate void CharacterDeath();
+    public event CharacterDeath OnCharacterDeath;
+
+    protected bool handleInput = true;
+
     public ProjectileLauncher MainLauncher;
 
     public int MaxHealth = 100;
@@ -23,11 +28,14 @@ public abstract class PlayerCharacter : MonoBehaviour
 
     private void Update()
     {
-        gameObject.transform.position += targetMoveDirection * MaxSpeed * Time.deltaTime;
-        if (targetFaceDirection.magnitude > 0.1f)
+        if (handleInput)
         {
-            gameObject.transform.rotation =
-              Quaternion.RotateTowards(gameObject.transform.rotation, Quaternion.LookRotation(targetFaceDirection, Vector3.up), Time.deltaTime * RotationSpeed);
+            gameObject.transform.position += targetMoveDirection * MaxSpeed * Time.deltaTime;
+            if (targetFaceDirection.magnitude > 0.1f)
+            {
+                gameObject.transform.rotation =
+                  Quaternion.RotateTowards(gameObject.transform.rotation, Quaternion.LookRotation(targetFaceDirection, Vector3.up), Time.deltaTime * RotationSpeed);
+            }
         }
     }
 
@@ -42,23 +50,31 @@ public abstract class PlayerCharacter : MonoBehaviour
 
     protected virtual void Kill()
     {
-        Debug.Log("RIP");
+        OnCharacterDeath?.Invoke();
+        Destroy(gameObject, 2.0f);
+        handleInput = false;
     }
 
     public virtual void TryMove(Vector2 direction)
     {
-        targetMoveDirection = new Vector3(direction.x, 0.0f, direction.y);
+        if (handleInput)
+        {
+            targetMoveDirection = new Vector3(direction.x, 0.0f, direction.y);
+        }
     }
 
     public virtual void TryFace(Vector2 direction)
     {
-        if (direction.magnitude > 0.2f)
+        if (handleInput)
         {
-            targetFaceDirection = new Vector3(direction.x, 0.0f, direction.y);
-        }
-        else
-        {
-            targetFaceDirection = transform.rotation * Vector3.forward;
+            if (direction.magnitude > 0.2f)
+            {
+                targetFaceDirection = new Vector3(direction.x, 0.0f, direction.y);
+            }
+            else
+            {
+                targetFaceDirection = transform.rotation * Vector3.forward;
+            }
         }
     }
 

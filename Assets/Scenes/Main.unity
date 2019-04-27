@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -145,7 +145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154767332}
   m_LocalRotation: {x: -0, y: -0.8048072, z: -0, w: 0.5935364}
-  m_LocalPosition: {x: 22.32, y: 2.4676447, z: 11.849999}
+  m_LocalPosition: {x: 2.46, y: 0, z: 11.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1508194733}
@@ -188,7 +188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 228967850}
   m_LocalRotation: {x: -0, y: -0.6215848, z: -0, w: 0.78334695}
-  m_LocalPosition: {x: 23.31, y: 2.4676447, z: -7.29}
+  m_LocalPosition: {x: 3.4500008, y: 0, z: -7.4399996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1508194733}
@@ -340,7 +340,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676448623}
   m_LocalRotation: {x: -0, y: -0.6136308, z: -0, w: -0.7895932}
-  m_LocalPosition: {x: -20.710205, y: 2.4676447, z: -7.7458262}
+  m_LocalPosition: {x: -1.0247784, y: 0, z: -6.9401627}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1508194733}
@@ -383,7 +383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750443456}
   m_LocalRotation: {x: -0, y: -0.75721055, z: -0, w: 0.6531708}
-  m_LocalPosition: {x: 23.07, y: 2.4676447, z: 5.8199997}
+  m_LocalPosition: {x: 3.210001, y: 0, z: 5.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1508194733}
@@ -517,7 +517,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122913227}
   m_LocalRotation: {x: -0, y: -0.68587625, z: -0, w: 0.72771823}
-  m_LocalPosition: {x: 23.35, y: 2.4676447, z: -0.83000064}
+  m_LocalPosition: {x: 3.4900017, y: 0, z: -0.98000026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1508194733}
@@ -560,7 +560,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255104984}
   m_LocalRotation: {x: -0, y: -0.67204684, z: -0, w: -0.7405087}
-  m_LocalPosition: {x: -21.155426, y: 2.4676447, z: -1.6856635}
+  m_LocalPosition: {x: -1.47, y: 0, z: -0.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1508194733}
@@ -631,7 +631,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 23.44
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -685,7 +685,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508194732}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.88925135, y: -1.9676446, z: -2.384667}
+  m_LocalPosition: {x: -0.88925135, y: 0, z: -2.384667}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 750443457}
@@ -748,7 +748,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: aa46e7c6fddf2c2499827c55855769e4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -815,7 +815,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1904746249}
   m_LocalRotation: {x: -0, y: -0.79876363, z: -0, w: -0.60164505}
-  m_LocalPosition: {x: -20.734562, y: 2.4676447, z: 11.419816}
+  m_LocalPosition: {x: -1.0491352, y: 0, z: 12.225479}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1508194733}
@@ -858,7 +858,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907103883}
   m_LocalRotation: {x: -0, y: -0.74477273, z: -0, w: -0.6673182}
-  m_LocalPosition: {x: -21.1, y: 2.4676447, z: 4.97}
+  m_LocalPosition: {x: -1.4145737, y: 0, z: 5.7756634}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1508194733}
