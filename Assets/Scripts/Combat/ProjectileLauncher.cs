@@ -21,7 +21,9 @@ public class ProjectileLauncher : MonoBehaviour
     private void LauchProjectile(Vector3 position, Quaternion direction)
     {
         timeRemaining = launchInterval;
-        Instantiate(ProjectilePrefab, position, direction);
+        var go = Instantiate(ProjectilePrefab, position, direction);
+        go.FromTeam = gameObject.layer == 8 ? Team.TeamA : Team.TeamB;
+        go.gameObject.layer = gameObject.layer + 2;
     }
 
     void Update()

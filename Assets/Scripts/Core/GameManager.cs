@@ -67,6 +67,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void GetNewCharacter(PlayerController playerController, Team team)
+    {
+        if (team == Team.TeamA)
+        {
+            playerController.AssignCharacter(VillagerPrefabs[Random.Range(0, VillagerPrefabs.Count)], VillagerSpawnPositonsTeamA[TeamASpawnIndex], Team.TeamA);
+            TeamASpawnIndex++;
+            if (TeamASpawnIndex >= VillagerSpawnPositonsTeamA.Count)
+            {
+                TeamASpawnIndex = 0;
+            }
+        }
+        else
+        {
+            playerController.AssignCharacter(VillagerPrefabs[Random.Range(0, VillagerPrefabs.Count)], VillagerSpawnPositonsTeamB[TeamBSpawnIndex], Team.TeamB);
+            TeamBSpawnIndex++;
+            if (TeamBSpawnIndex >= VillagerSpawnPositonsTeamB.Count)
+            {
+                TeamBSpawnIndex = 0;
+            }
+        }
+    }
 
     void Update()
     {

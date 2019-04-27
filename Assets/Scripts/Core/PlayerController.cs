@@ -7,6 +7,7 @@ using UnityEngine.Experimental.Input.Plugins.Users;
 public class PlayerController : MonoBehaviour
 {
     public PlayerCharacter Character;
+    private Team playerTeam;
 
     private void Start()
     {
@@ -40,6 +41,21 @@ public class PlayerController : MonoBehaviour
 
     public void AssignCharacter(PlayerCharacter characterPrefab, Transform spawnTrans, Team team)
     {
+        playerTeam = team;
         Character = Instantiate(characterPrefab, spawnTrans.position, spawnTrans.rotation);
+        Character.OnCharacterDeath += HandleDeath;
+        if (playerTeam == Team.TeamA)
+        {
+            Character.gameObject.layer = 8;
+        } else
+        {
+            Character.gameObject.layer = 9;
+        }
+    }
+
+    private void HandleDeath()
+    {
+        Character.OnCharacterDeath -= HandleDeath;
+        GameManager.Instance.GetNewCharacter(gameObject.GetComponent<PlayerController>(), playerTeam);
     }
 }
