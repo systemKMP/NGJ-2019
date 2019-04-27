@@ -36,7 +36,7 @@ public abstract class PlayerCharacter : MonoBehaviour
         if (handleInput)
         {
             body.velocity = targetMoveDirection * MaxSpeed;
-            //gameObject.transform.position += targetMoveDirection * MaxSpeed * Time.deltaTime;
+            body.angularVelocity = Vector3.zero;
             if (targetFaceDirection.magnitude > 0.1f)
             {
                 gameObject.transform.rotation =
