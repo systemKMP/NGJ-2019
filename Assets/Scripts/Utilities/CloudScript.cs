@@ -20,15 +20,15 @@ public class CloudScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.localPosition.z > rightBorder)
+        if (transform.localPosition.x > rightBorder)
         {
-            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, leftBorder);
+            transform.localPosition = new Vector3(leftBorder, transform.localPosition.y, transform.localPosition.z);
         }
-        else if (transform.localPosition.z < leftBorder)
+        else if (transform.localPosition.x < leftBorder)
         {
-            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, rightBorder);
+            transform.localPosition = new Vector3(rightBorder, transform.localPosition.y, transform.localPosition.z);
         }
 
-        transform.Translate(transform.InverseTransformDirection(Vector3.forward * Time.deltaTime * cloudSpeed));
+        transform.Translate(transform.InverseTransformDirection(Vector3.right * Time.deltaTime * cloudSpeed));
     }
 }
