@@ -874,7 +874,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   launchInterval: 2
   timeRemaining: 0
-  ProjectilePrefab: {fileID: 0}
+  ProjectilePrefab: {fileID: 6286297110390405829, guid: c72b6a77a0142964a9fca62e7134c441,
+    type: 3}
 --- !u!54 &276769341716986550
 Rigidbody:
   m_ObjectHideFlags: 0
