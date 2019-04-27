@@ -28,11 +28,14 @@ public abstract class PlayerCharacter : MonoBehaviour
 
     private void Update()
     {
-        gameObject.transform.position += targetMoveDirection * MaxSpeed * Time.deltaTime;
-        if (targetFaceDirection.magnitude > 0.1f)
+        if (handleInput)
         {
-            gameObject.transform.rotation =
-              Quaternion.RotateTowards(gameObject.transform.rotation, Quaternion.LookRotation(targetFaceDirection, Vector3.up), Time.deltaTime * RotationSpeed);
+            gameObject.transform.position += targetMoveDirection * MaxSpeed * Time.deltaTime;
+            if (targetFaceDirection.magnitude > 0.1f)
+            {
+                gameObject.transform.rotation =
+                  Quaternion.RotateTowards(gameObject.transform.rotation, Quaternion.LookRotation(targetFaceDirection, Vector3.up), Time.deltaTime * RotationSpeed);
+            }
         }
     }
 
@@ -48,7 +51,7 @@ public abstract class PlayerCharacter : MonoBehaviour
     protected virtual void Kill()
     {
         OnCharacterDeath?.Invoke();
-        Destroy(gameObject, 1.0f);
+        Destroy(gameObject, 2.0f);
         handleInput = false;
     }
 

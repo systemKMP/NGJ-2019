@@ -1815,6 +1815,7 @@ GameObject:
   - component: {fileID: 415764991693781302}
   - component: {fileID: 415764991693781297}
   - component: {fileID: 415764991693781303}
+  - component: {fileID: -8194764010203648246}
   m_Layer: 8
   m_Name: Villager
   m_TagString: Villager
@@ -1831,7 +1832,7 @@ Transform:
   m_GameObject: {fileID: 8567241877721203600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 5135649689152590597}
   - {fileID: 6425588837313513917}
@@ -1901,13 +1902,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcfe561c5084460418ae4b040a121383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainLauncher: {fileID: 0}
+  MainLauncher: {fileID: 415764991693781297}
   MaxHealth: 100
   CurrentHealth: 0
   targetMoveDirection: {x: 0, y: 0, z: 0}
   targetFaceDirection: {x: 0, y: 0, z: 0}
-  MaxSpeed: 2
+  MaxSpeed: 4
   RotationSpeed: 100
+--- !u!136 &-8194764010203648246
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8567241877721203600}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.02
+  m_Height: 8.82
+  m_Direction: 1
+  m_Center: {x: 0, y: 3.74, z: 0}
 --- !u!1 &8634546518138732233
 GameObject:
   m_ObjectHideFlags: 0
