@@ -1,0 +1,129 @@
+{
+    "name": "InputMaster",
+    "maps": [
+        {
+            "name": "PlayerControls",
+            "id": "98017cba-176d-4e0f-9214-dd18ddb35238",
+            "actions": [
+                {
+                    "name": "Movement",
+                    "id": "419063e8-3d05-4d5e-bbaa-71e50eb95d6b",
+                    "expectedControlLayout": "Vector2",
+                    "continuous": true,
+                    "passThrough": false,
+                    "initialStateCheck": true,
+                    "processors": "",
+                    "interactions": "",
+                    "bindings": []
+                },
+                {
+                    "name": "ActionA",
+                    "id": "ea78aac4-8f25-4e74-a02f-4c9dcb854f40",
+                    "expectedControlLayout": "",
+                    "continuous": false,
+                    "passThrough": false,
+                    "initialStateCheck": false,
+                    "processors": "",
+                    "interactions": "",
+                    "bindings": []
+                },
+                {
+                    "name": "Face",
+                    "id": "5fd3c43d-039c-4430-9879-0a92a91fad23",
+                    "expectedControlLayout": "Vector2",
+                    "continuous": true,
+                    "passThrough": false,
+                    "initialStateCheck": true,
+                    "processors": "",
+                    "interactions": "",
+                    "bindings": []
+                },
+                {
+                    "name": "ActionB",
+                    "id": "38e7c51c-32be-494e-8aad-d5fba4fdacc8",
+                    "expectedControlLayout": "",
+                    "continuous": false,
+                    "passThrough": false,
+                    "initialStateCheck": false,
+                    "processors": "",
+                    "interactions": "",
+                    "bindings": []
+                },
+                {
+                    "name": "ActionC",
+                    "id": "d0f8a812-0722-4605-b7b3-1ad33029db2c",
+                    "expectedControlLayout": "",
+                    "continuous": false,
+                    "passThrough": false,
+                    "initialStateCheck": false,
+                    "processors": "",
+                    "interactions": "",
+                    "bindings": []
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1b1a57ec-f3fd-46de-9b2f-72f1d1123c9c",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Xbox-1;Xbox-2",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "id": "c7797b81-2c7d-4e90-a02e-e91378116b93",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": ";Xbox-2;Xbox-1",
+                    "action": "ActionA",
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "id": "d63f138d-60ff-444b-846e-1d20e21ac4f1",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Face",
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "id": "8f0bb41c-f317-4f22-88a3-24b4962ccbc7",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActionB",
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "id": "b06eef70-e42d-4bdb-a336-ba5ae6fc073d",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActionC",
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
