@@ -37,7 +37,6 @@ public class Projectile : MonoBehaviour
         string tag = col.tag;
         if ((FromTeam == Team.TeamA && col.gameObject.layer == 9) || (FromTeam == Team.TeamB && col.gameObject.layer == 8))
         {
-            Debug.Log("Hit");
             Destroy(gameObject, 1.0f);
             isActive = false;
             col.gameObject.GetComponent<PlayerCharacter>().Hit(Damage);

@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class BossCharacter : PlayerCharacter
 {
-    protected override void Kill()
+    public override void Kill(bool respawn)
     {
-        GameManager.Instance.BossDeath();
+        base.Kill(respawn);
+        GameManager.Instance.BossDeath(transform);
     }
 
     public override void TryReleaseAction(int actionIndex)
     {
     }
+
 
     public override void TryStartAction(int actionIndex)
     {
