@@ -1872,7 +1872,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &415764991693781297
 MonoBehaviour:
@@ -1908,7 +1908,7 @@ MonoBehaviour:
   targetMoveDirection: {x: 0, y: 0, z: 0}
   targetFaceDirection: {x: 0, y: 0, z: 0}
   MaxSpeed: 4
-  RotationSpeed: 100
+  RotationSpeed: 360
 --- !u!136 &-8194764010203648246
 CapsuleCollider:
   m_ObjectHideFlags: 0
