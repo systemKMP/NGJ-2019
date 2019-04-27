@@ -26,8 +26,8 @@ public class ProjectileLauncher : MonoBehaviour
 
     private IEnumerator LauchProjectile(Vector3 position, Quaternion direction)
     {
-        yield return new WaitForSeconds(launchDelay);
         timeRemaining = launchInterval;
+        yield return new WaitForSeconds(launchDelay);
         var go = Instantiate(ProjectilePrefab, position, direction);
         go.FromTeam = gameObject.layer == 8 ? Team.TeamA : Team.TeamB;
         go.gameObject.layer = gameObject.layer + 2;

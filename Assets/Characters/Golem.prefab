@@ -695,6 +695,7 @@ GameObject:
   - component: {fileID: 3978990174358631679}
   - component: {fileID: 1308554486672798509}
   - component: {fileID: -8829480490037195071}
+  - component: {fileID: -2725032448286717750}
   - component: {fileID: 276769341716986550}
   - component: {fileID: 3388344147887420238}
   m_Layer: 0
@@ -761,7 +762,7 @@ MonoBehaviour:
   RotationSpeed: 100
   Team: 0
   NumberInTeam: 0
-  SecondaryLauncher: {fileID: 0}
+  SecondaryLauncher: {fileID: -2725032448286717750}
 --- !u!114 &-8829480490037195071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -779,6 +780,24 @@ MonoBehaviour:
   instantiationDistance: 3.5
   launchDelay: 1.05
   ProjectilePrefab: {fileID: 3238180635768688944, guid: f47bd4002ce50194f8dbbebf3b2842c7,
+    type: 3}
+--- !u!114 &-2725032448286717750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8064095776531819414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c62d3992b1752b64aa66ae61feb83c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  launchInterval: 4
+  timeRemaining: 0
+  instantiationDistance: 3
+  launchDelay: 1.05
+  ProjectilePrefab: {fileID: 6286297110390405829, guid: bdbef3523f5a2bc40b161544ab138eb9,
     type: 3}
 --- !u!54 &276769341716986550
 Rigidbody:

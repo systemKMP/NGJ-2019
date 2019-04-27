@@ -42,6 +42,7 @@ public class BossCharacter : PlayerCharacter
         {
             if (MainLauncher.TryLaunch(transform.position, transform.rotation))
             {
+                SecondaryLauncher.timeRemaining = SecondaryLauncher.launchInterval;
                 animator.SetTrigger("Punch");
             }
         }
@@ -49,6 +50,7 @@ public class BossCharacter : PlayerCharacter
         {
             if (SecondaryLauncher.TryLaunch(transform.position, transform.rotation))
             {
+                MainLauncher.timeRemaining = MainLauncher.launchInterval;
                 animator.SetTrigger("Punch");
             }
         }
