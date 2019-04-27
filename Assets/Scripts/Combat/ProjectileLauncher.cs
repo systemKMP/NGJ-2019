@@ -7,16 +7,20 @@ public class ProjectileLauncher : MonoBehaviour
 {
     public float launchInterval = 2.0f;
     public float timeRemaining = 0.0f;
-
+    public float instantiationDistance = 0.0f;
     public float launchDelay;
 
     public Projectile ProjectilePrefab;
 
-    public void TryLaunch(Vector3 position, Quaternion direction)
+    public bool TryLaunch(Vector3 position, Quaternion direction)
     {
         if (timeRemaining <= 0.0f)
         {
-            StartCoroutine(LauchProjectile(position, direction));
+            StartCoroutine(LauchProjectile(position + transform.rotation * Vector3.forward * instantiationDistance, direction));
+            return true;
+        } else
+        {
+            return false;
         }
     }
 
