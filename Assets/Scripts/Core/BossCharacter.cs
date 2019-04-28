@@ -5,7 +5,11 @@ public class BossCharacter : PlayerCharacter
     private Animator animator;
 
     public AudioClip BossStepClip;
+    public AudioClip BossMeleeClip;
+    public AudioClip BossDeathClip;
     private AudioSource BossStepSource;
+    private AudioSource BossMeleeSource;
+    private AudioSource BossDeathSource;
 
     public AudioSource AddAudio(AudioClip clip, bool loop, bool playAwake, float vol)
     {
@@ -30,6 +34,8 @@ public class BossCharacter : PlayerCharacter
 
         // Add audio clips
         BossStepSource = AddAudio(BossStepClip, false, true, 0.2f);
+        BossMeleeSource = AddAudio(BossMeleeClip, false, true, 0.2f);
+        BossDeathSource = AddAudio(BossDeathClip, false, true, 0.2f);
     }
 
     public override void Kill(bool respawn)
@@ -39,6 +45,11 @@ public class BossCharacter : PlayerCharacter
         GameManager.Instance.BossDeath(transform);
 
         animator.SetBool("IsStunned", true);
+
+        if (!BossDeathSource.isPlaying)
+            BossDeathSource.PlayDelayed(0.1f);
+        else
+            BossDeathSource.Stop();
     }
 
     public override void TryReleaseAction(int actionIndex)
@@ -54,7 +65,7 @@ public class BossCharacter : PlayerCharacter
         if (direction.magnitude > 0.05f)
         {
             if (!BossStepSource.isPlaying)
-                BossStepSource.Play();
+                BossStepSource.PlayDelayed(0.3f);
         }
         else
             BossStepSource.Stop();
@@ -68,6 +79,11 @@ public class BossCharacter : PlayerCharacter
             {
                 SecondaryLauncher.timeRemaining = SecondaryLauncher.launchInterval;
                 animator.SetTrigger("Punch");
+
+                if (!BossMeleeSource.isPlaying)
+                    BossMeleeSource.PlayDelayed(1.0f);
+                else
+                    BossMeleeSource.Stop();
             }
         }
         if (actionIndex == 1)
@@ -76,6 +92,11 @@ public class BossCharacter : PlayerCharacter
             {
                 MainLauncher.timeRemaining = MainLauncher.launchInterval;
                 animator.SetTrigger("Punch");
+
+                if (!BossMeleeSource.isPlaying)
+                    BossMeleeSource.PlayDelayed(1.0f);
+                else
+                    BossMeleeSource.Stop();
             }
         }
     }
