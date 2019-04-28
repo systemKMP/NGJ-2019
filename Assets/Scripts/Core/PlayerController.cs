@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
         Character.Team = playerTeam;
         Character.NumberInTeam = numberInTeam;
         Character.SetupIndicator();
+        Character.SetupTeamColor();
 
         availableMembers[playerTeam][numberInTeam] = true;
     }

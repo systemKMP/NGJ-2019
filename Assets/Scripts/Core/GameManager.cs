@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public enum Team
@@ -16,8 +17,19 @@ public class GameManager : MonoBehaviour
 
     public void DeclareVictory(Team team)
     {
-
+        Debug.Log("Team " + team + " wins!");
+        StartCoroutine(RestartGame());
     }
+
+    IEnumerator RestartGame()
+    {
+        yield return new WaitForSeconds(5.0f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+
+
+
 
     public static GameManager Instance
     {

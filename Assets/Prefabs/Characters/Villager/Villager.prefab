@@ -1914,6 +1914,9 @@ MonoBehaviour:
   RotationSpeed: 360
   Team: 0
   NumberInTeam: 0
+  VillagerAttackClip: {fileID: 8300000, guid: f5c4cf9378d610e448cafd1116c5181f, type: 3}
+  TeamAMaterial: {fileID: 2100000, guid: 3f845ab839a2d1c48bf2b614f9c7ee01, type: 2}
+  TeamBMaterial: {fileID: 2100000, guid: 27cc449b54905e94eaec2a27669b3373, type: 2}
 --- !u!136 &-8194764010203648246
 CapsuleCollider:
   m_ObjectHideFlags: 0
