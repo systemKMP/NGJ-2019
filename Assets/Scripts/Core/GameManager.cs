@@ -15,12 +15,19 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
 
+    private Team? winningTeam;
+
     public void DeclareVictory(Team team)
     {
         Debug.Log("Team " + team + " wins!");
+        winningTeam = team;
         StartCoroutine(RestartGame());
+        Invoke("ShowVictoryScreen", 1);
+    }
 
-        winCanvas.transform.GetChild(team == Team.TeamA ? 0 : 1).gameObject.SetActive(true);
+    private void ShowVictoryScreen()
+    {
+        winCanvas.transform.GetChild(winningTeam == Team.TeamA ? 0 : 1).gameObject.SetActive(true);
     }
 
     IEnumerator RestartGame()
@@ -32,6 +39,8 @@ public class GameManager : MonoBehaviour
         {
             winCanvas.transform.GetChild(i).gameObject.SetActive(false);
         }
+
+        winningTeam = null;
     }
 
     [SerializeField]
