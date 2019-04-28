@@ -65,7 +65,7 @@ public class BossCharacter : PlayerCharacter
         if (direction.magnitude > 0.05f)
         {
             if (!BossStepSource.isPlaying)
-                BossStepSource.PlayDelayed(0.3f);
+                BossStepSource.PlayDelayed(0.7f);
         }
         else
             BossStepSource.Stop();
