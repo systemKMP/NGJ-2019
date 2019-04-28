@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Assertions;
 using Debug = UnityEngine.Debug;
-
+using UnityEngine.UI;
 public abstract class PlayerCharacter : MonoBehaviour
 {
     public delegate void CharacterDeath(bool respawn);
@@ -14,7 +14,7 @@ public abstract class PlayerCharacter : MonoBehaviour
 
     public int MaxHealth = 100;
     public int CurrentHealth;
-
+    public HealthBar healthBar;
     public Vector3 targetMoveDirection;
     public Vector3 targetFaceDirection;
 
@@ -31,6 +31,7 @@ public abstract class PlayerCharacter : MonoBehaviour
     protected virtual void Awake()
     {
         CurrentHealth = MaxHealth;
+        healthBar.GetComponentInChildren<Image>().color = Team == Team.TeamA ? Color.red : Color.blue;
         body = gameObject.GetComponent<Rigidbody>();
     }
 
@@ -58,7 +59,10 @@ public abstract class PlayerCharacter : MonoBehaviour
         {
             return;
         }
+        
         CurrentHealth -= damage;
+        if(healthBar != null)
+            healthBar.SetValue(Mathf.Clamp((float)CurrentHealth/(float)MaxHealth,0f,1f));
         if (CurrentHealth <= 0)
         {
             Kill(true);

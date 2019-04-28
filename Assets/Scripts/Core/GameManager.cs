@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
     public List<Transform> VillagerSpawnPositonsTeamB;
     public Transform BossSpawnPosition;
 
-
+    
     public void SetUpPlayer(PlayerController playerController)
     {
         if (VillagersTeamA.Count <= VillagersTeamB.Count)

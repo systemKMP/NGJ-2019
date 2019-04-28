@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Experimental.Input.Plugins.PlayerInput;
-
+using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public PlayerCharacter Character;
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         playerTeam = team;
         Character = Instantiate(characterPrefab, spawnTrans.position, spawnTrans.rotation);
         Character.OnCharacterDeath += HandleDeath;
-
+        Character.healthBar.GetComponentInChildren<Image>().color = playerTeam == Team.TeamA ? Color.red : Color.blue;
         Character.gameObject.layer = playerTeam == Team.TeamA ? 8 : 9;
 
         var numberInTeam = Array.FindIndex(availableMembers[playerTeam], x => x == false);
