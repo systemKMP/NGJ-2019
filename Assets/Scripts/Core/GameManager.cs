@@ -15,19 +15,36 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
 
+    private Team? winningTeam;
+
     public void DeclareVictory(Team team)
     {
         Debug.Log("Team " + team + " wins!");
+        winningTeam = team;
         StartCoroutine(RestartGame());
+        Invoke("ShowVictoryScreen", 1);
+    }
+
+    private void ShowVictoryScreen()
+    {
+        winCanvas.transform.GetChild(winningTeam == Team.TeamA ? 0 : 1).gameObject.SetActive(true);
     }
 
     IEnumerator RestartGame()
     {
         yield return new WaitForSeconds(5.0f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        for (var i = 0; i < winCanvas.transform.childCount; i++)
+        {
+            winCanvas.transform.GetChild(i).gameObject.SetActive(false);
+        }
+
+        winningTeam = null;
     }
 
-
+    [SerializeField]
+    private Canvas winCanvas;
 
 
 
@@ -60,7 +77,7 @@ public class GameManager : MonoBehaviour
     public List<Transform> VillagerSpawnPositonsTeamB;
     public Transform BossSpawnPosition;
 
-
+    
     public void SetUpPlayer(PlayerController playerController)
     {
         if (VillagersTeamA.Count <= VillagersTeamB.Count)

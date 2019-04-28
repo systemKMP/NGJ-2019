@@ -21,7 +21,8 @@ public class HealthBar : MonoBehaviour
         image = GetComponent<Image>();
     }
     void Update(){
-        UpdatePosition();
+        transform.LookAt(cam.transform.position);
+        // UpdatePosition();
     }
 
     float ScaleDifference(){
@@ -41,6 +42,8 @@ public class HealthBar : MonoBehaviour
         transform.position = newPos + Vector2.up * offset; 
     }
     public void SetValue(float value){
+        image = GetComponentInChildren<Image>();
+        print(value);
         image.fillAmount = value;
     }
 }
