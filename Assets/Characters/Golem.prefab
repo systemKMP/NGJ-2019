@@ -765,7 +765,7 @@ MonoBehaviour:
   Team: 0
   NumberInTeam: 0
   BossStepClip: {fileID: 8300000, guid: e4c94cc203fc010488b433c3ce06ccca, type: 3}
-  BossMeleeClip: {fileID: 8300000, guid: 9b6dab22359986e4fa9b3e77cceb265d, type: 3}
+  BossMeleeClip: {fileID: 8300000, guid: 578d229faeff2124ca0d6921377e7cac, type: 3}
   BossDeathClip: {fileID: 8300000, guid: 53ba72e8c7501c04d95b8c11c14ce229, type: 3}
   SecondaryLauncher: {fileID: -2725032448286717750}
 --- !u!114 &-8829480490037195071
@@ -1013,11 +1013,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6463287491657914757}
     m_Modifications:
-    - target: {fileID: 3119899378347655297, guid: 10de0bb47f6f0fe42844520f1af851c7,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerTeamIndicator
-      objectReference: {fileID: 0}
     - target: {fileID: 7390517536109502316, guid: 10de0bb47f6f0fe42844520f1af851c7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1072,6 +1067,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3119899378347655297, guid: 10de0bb47f6f0fe42844520f1af851c7,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerTeamIndicator
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10de0bb47f6f0fe42844520f1af851c7, type: 3}
