@@ -755,7 +755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainLauncher: {fileID: -8829480490037195071}
-  MaxHealth: 15
+  MaxHealth: 10
   CurrentHealth: 0
   healthBar: {fileID: 5658923479468882576}
   targetMoveDirection: {x: 0, y: 0, z: 0}
@@ -1013,6 +1013,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6463287491657914757}
     m_Modifications:
+    - target: {fileID: 3119899378347655297, guid: 10de0bb47f6f0fe42844520f1af851c7,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerTeamIndicator
+      objectReference: {fileID: 0}
     - target: {fileID: 7390517536109502316, guid: 10de0bb47f6f0fe42844520f1af851c7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1068,11 +1073,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3119899378347655297, guid: 10de0bb47f6f0fe42844520f1af851c7,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerTeamIndicator
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10de0bb47f6f0fe42844520f1af851c7, type: 3}
 --- !u!4 &8918862442140495607 stripped
@@ -1088,11 +1088,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6463287491657914757}
     m_Modifications:
-    - target: {fileID: 6129770052514622258, guid: 1254af206f5123b42b555b3932cf939d,
-        type: 3}
-      propertyPath: m_Name
-      value: Healthbar 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7896200313977424670, guid: 1254af206f5123b42b555b3932cf939d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1212,6 +1207,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5.3596
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129770052514622258, guid: 1254af206f5123b42b555b3932cf939d,
+        type: 3}
+      propertyPath: m_Name
+      value: Healthbar 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805624042509853859, guid: 1254af206f5123b42b555b3932cf939d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c34449f6750a0ea478f7d4cefdf044a8,
+        type: 3}
+    - target: {fileID: 7805624042509853859, guid: 1254af206f5123b42b555b3932cf939d,
+        type: 3}
+      propertyPath: m_Type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805624042509853859, guid: 1254af206f5123b42b555b3932cf939d,
+        type: 3}
+      propertyPath: m_FillMethod
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1254af206f5123b42b555b3932cf939d, type: 3}
