@@ -1889,6 +1889,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   launchInterval: 2
   timeRemaining: 0
+  instantiationDistance: 0
+  launchDelay: 0
   ProjectilePrefab: {fileID: 6286297110390405829, guid: c72b6a77a0142964a9fca62e7134c441,
     type: 3}
 --- !u!114 &415764991693781303
@@ -1904,7 +1906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainLauncher: {fileID: 415764991693781297}
-  MaxHealth: 100
+  MaxHealth: 2
   CurrentHealth: 0
   targetMoveDirection: {x: 0, y: 0, z: 0}
   targetFaceDirection: {x: 0, y: 0, z: 0}

@@ -754,15 +754,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainLauncher: {fileID: -8829480490037195071}
-  MaxHealth: 100
+  MaxHealth: 15
   CurrentHealth: 0
   targetMoveDirection: {x: 0, y: 0, z: 0}
   targetFaceDirection: {x: 0, y: 0, z: 0}
-  MaxSpeed: 2
+  MaxSpeed: 1.6
   RotationSpeed: 100
   Team: 0
   NumberInTeam: 0
   BossStepClip: {fileID: 8300000, guid: 3064224ce4e7e20458d35462a2dec1c6, type: 3}
+  BossMeleeClip: {fileID: 8300000, guid: 9b6dab22359986e4fa9b3e77cceb265d, type: 3}
+  BossDeathClip: {fileID: 8300000, guid: 53ba72e8c7501c04d95b8c11c14ce229, type: 3}
   SecondaryLauncher: {fileID: -2725032448286717750}
 --- !u!114 &-8829480490037195071
 MonoBehaviour:

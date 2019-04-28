@@ -18,8 +18,9 @@ TagManager:
   - CharacterTeamB
   - ProjectileTeamA
   - ProjectileTeamB
-  - WallTeamA
-  - WallTeamB
+  - Post-process
+  - WorldBound
+  - 
   - 
   - 
   - 
