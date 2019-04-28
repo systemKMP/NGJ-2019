@@ -6,6 +6,12 @@ public class VillagerCharacter : PlayerCharacter
 {
     private Animator animator;
 
+    [SerializeField]
+    private Material TeamAMaterial;
+
+    [SerializeField]
+    private Material TeamBMaterial;
+
     protected override void Awake()
     {
         base.Awake();
@@ -40,5 +46,19 @@ public class VillagerCharacter : PlayerCharacter
                 MainLauncher.TryLaunch(transform.position, transform.rotation);
             }
         }
+    }
+
+    public override void SetupTeamColor()
+    {
+        var child = transform.GetChild(2);
+
+        var materials = child.GetComponent<SkinnedMeshRenderer>().materials;
+        var newMaterials = new[]
+                               {
+                                   materials[0], materials[1],
+                                   (Team == Team.TeamA ? TeamAMaterial : TeamBMaterial)
+                               };
+
+        child.GetComponent<SkinnedMeshRenderer>().materials = newMaterials;
     }
 }
