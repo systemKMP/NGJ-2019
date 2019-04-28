@@ -16,7 +16,6 @@ public class Projectile : MonoBehaviour
     private bool isActive = true;
 
     public GameObject HitEffect;
-
     public Team FromTeam;
 
     void Update()
@@ -44,6 +43,7 @@ public class Projectile : MonoBehaviour
             {
                 Instantiate(HitEffect, transform.position, transform.rotation);
             }
+            
             Destroy(gameObject, 1.0f);
             isActive = false;
             col.gameObject.GetComponent<PlayerCharacter>().Hit(Damage);
