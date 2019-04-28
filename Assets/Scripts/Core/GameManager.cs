@@ -19,15 +19,23 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Team " + team + " wins!");
         StartCoroutine(RestartGame());
+
+        winCanvas.transform.GetChild(team == Team.TeamA ? 0 : 1).gameObject.SetActive(true);
     }
 
     IEnumerator RestartGame()
     {
         yield return new WaitForSeconds(5.0f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        for (var i = 0; i < winCanvas.transform.childCount; i++)
+        {
+            winCanvas.transform.GetChild(i).gameObject.SetActive(false);
+        }
     }
 
-
+    [SerializeField]
+    private Canvas winCanvas;
 
 
 
