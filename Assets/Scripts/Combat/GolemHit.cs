@@ -14,11 +14,11 @@ public class GolemHit : MonoBehaviour
     }
 
     void Hit(){
-        Collider[] coll = Physics.OverlapSphere(transform.position,sphere.radius,wallLayer);
+        // Collider[] coll = Physics.OverlapSphere(transform.position,sphere.radius,wallLayer);
 
-        if(coll[0] != null)
-        {
-            coll[0].GetComponent<Wall>().Hit(transform.position);
-        }
+        // if(coll[0] != null)
+        // {
+        //     coll[0].GetComponent<Wall>().Hit(transform.position);
+        // }
     }
 }

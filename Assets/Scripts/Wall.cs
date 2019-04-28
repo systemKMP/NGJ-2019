@@ -16,7 +16,7 @@ public class Wall : MonoBehaviour
     public void Start(){
         // Hit(direction.position);
     }
-    public void Hit(Vector3 point)
+    public void Hit()
     {
         destroyedWall.SetActive(true);
 
@@ -24,10 +24,10 @@ public class Wall : MonoBehaviour
 
         foreach (var item in pieces)
         {
-            Vector3 distance = item.transform.position - point;
+            // Vector3 distance = item.transform.position - point;
             
-            float power =  (damageRadius - distance.magnitude/damageRadius);
-            Vector3 forward = direction.forward * power;
+            // float power =  (damageRadius - distance.magnitude/damageRadius);
+            Vector3 forward = direction.forward * forceForward;
 
             item.AddForce(forward*forceForward,ForceMode.Impulse);
             
