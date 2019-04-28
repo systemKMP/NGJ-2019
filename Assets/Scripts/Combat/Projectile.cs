@@ -46,7 +46,12 @@ public class Projectile : MonoBehaviour
             }
             Destroy(gameObject, 1.0f);
             isActive = false;
-            col.gameObject.GetComponent<PlayerCharacter>().Hit(Damage);
+            var go = col.gameObject;
+            while (go.transform.parent != null)
+            {
+                go = go.transform.parent.gameObject;
+            }
+            go.GetComponentInParent<PlayerCharacter>().Hit(Damage);
         }
     }
 }
