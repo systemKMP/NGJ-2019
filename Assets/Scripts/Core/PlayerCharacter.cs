@@ -114,4 +114,8 @@ public abstract class PlayerCharacter : MonoBehaviour
 
         indicator.gameObject.SetActive(true);
     }
+
+    public virtual void SetupTeamColor()
+    {
+    }
 }
