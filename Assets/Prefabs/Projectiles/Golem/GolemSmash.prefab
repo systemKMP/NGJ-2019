@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 400
   Lifetime: 5
-  HitValidityTime: 0
+  HitValidityTime: 0.4
   Velocity: 0
   HitEffect: {fileID: 0}
   FromTeam: 0
@@ -88,11 +88,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3238180635768688956}
     m_Modifications:
-    - target: {fileID: 709246229076608937, guid: 597b8486111e0254aac2d9b1e0176def,
-        type: 3}
-      propertyPath: m_Name
-      value: Rock effect
-      objectReference: {fileID: 0}
     - target: {fileID: 709246229076608942, guid: 597b8486111e0254aac2d9b1e0176def,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -162,6 +157,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 709246229076608937, guid: 597b8486111e0254aac2d9b1e0176def,
+        type: 3}
+      propertyPath: m_Name
+      value: Rock effect
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 597b8486111e0254aac2d9b1e0176def, type: 3}
