@@ -33,7 +33,7 @@ public class VillagerCharacter : PlayerCharacter
         animator.SetBool("IsRunning", false);
 
         // Add audio clips
-        VillagerAttackSource = AddAudio(VillagerAttackClip, false, true, 0.2f);
+        VillagerAttackSource = AddAudio(VillagerAttackClip, false, true, 1.0f);
     }
 
     public override void Kill(bool respawn)

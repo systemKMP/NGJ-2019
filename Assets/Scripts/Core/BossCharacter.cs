@@ -33,9 +33,9 @@ public class BossCharacter : PlayerCharacter
         animator.SetBool("IsStunned", false);
 
         // Add audio clips
-        BossStepSource = AddAudio(BossStepClip, false, true, 0.2f);
-        BossMeleeSource = AddAudio(BossMeleeClip, false, true, 0.2f);
-        BossDeathSource = AddAudio(BossDeathClip, false, true, 0.2f);
+        BossStepSource = AddAudio(BossStepClip, false, true, 1.0f);
+        BossMeleeSource = AddAudio(BossMeleeClip, false, true, 1.0f);
+        BossDeathSource = AddAudio(BossDeathClip, false, true, 1.0f);
     }
 
     public override void Kill(bool respawn)
