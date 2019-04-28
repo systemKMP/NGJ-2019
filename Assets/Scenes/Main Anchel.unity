@@ -559,7 +559,7 @@ GameObject:
   m_Component:
   - component: {fileID: 259067958}
   - component: {fileID: 259067957}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Post-Processing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2085,7 +2085,7 @@ GameObject:
   - component: {fileID: 1484389868}
   - component: {fileID: 1484389869}
   - component: {fileID: 1484389870}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -2269,9 +2269,9 @@ MonoBehaviour:
   volumeLayer:
     serializedVersion: 2
     m_Bits: 4096
-  stopNaNPropagation: 1
+  stopNaNPropagation: 0
   finalBlitToCameraTarget: 1
-  antialiasingMode: 2
+  antialiasingMode: 1
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
@@ -3208,6 +3208,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Map
       objectReference: {fileID: 0}
+    - target: {fileID: 3417585511417706233, guid: b3461f1fa79edd240a87be672fbf8848,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3417585511196434527, guid: b3461f1fa79edd240a87be672fbf8848,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3317,11 +3322,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 4.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417585511417706233, guid: b3461f1fa79edd240a87be672fbf8848,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3417585511837596305, guid: b3461f1fa79edd240a87be672fbf8848,
         type: 3}
